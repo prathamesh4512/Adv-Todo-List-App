@@ -2,9 +2,6 @@
 Todo List Web-App built upon nodejs. 
 Tech Stack involved : HTML,CSS, JS, Node.js, Express.js, EJS templating engine, MongoDB.
 
-## Deployed 
-Working link of the Web App ->
-
 ## Description
 1. To add a todo enter description, categeory and due-date. (Everything is mandatory).
 2. To mark an item as complete either click on checkbox or the todo item.
