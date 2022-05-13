@@ -1,0 +1,113 @@
+.list-item{
+    opacity: 1;
+    transition : all 0.4s cubic-bezier(.36,-0.64,.34,1.76);
+    margin: 2px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid lightslategray;
+}
+
+.list-item:last-child{
+    border-bottom: 0px solid lightslategray;
+}
+
+.list-item:hover{
+    transform: scale(1.01);
+}
+
+label{
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.delete{
+    margin-left: auto;
+}
+
+.delete a{
+    color: black;
+}
+
+.todo-div{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+input[type=checkbox]{
+    zoom: 1.1;
+    border: 10px soild black;
+    width: 18px;
+    height: 18px;
+}
+
+.completion-date{
+    color: black;
+    padding: 2px;
+}
+
+.note{
+    padding: 2px;
+    display: flex;
+}
+
+
+.state,.id,.completion-date-raw{
+    display: none;
+}
+
+.deadline-category-div{
+    width: 100%;
+    display: flex;
+    padding: 2px;
+}
+
+.deadline-category-div>div{
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+    font-weight: normal;
+    font-size: 0.6em;
+    padding: 2px;
+}
+
+.category{
+    min-width: 70px;
+    max-width: 70px;
+    background-color: green;
+    margin-left: 5px;
+}
+
+.deadline{
+    display: none;
+    background-color: red;
+    margin-left: 20px;
+}
+
+/* Media Queries for screens under 786px */
+
+@media screen and (max-width:768px){
+
+    .list-item{
+        font-size: 20px;
+    }
+
+    label{
+        width: 99%;
+    }
+
+    .delete{
+        margin-left: 8px;
+    }
+
+    .fa-trash:hover{
+        color: red;
+    }
+}

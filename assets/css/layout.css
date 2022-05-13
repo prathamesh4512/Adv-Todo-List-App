@@ -1,0 +1,257 @@
+/* font used */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 10px 0px;
+    height: 100vh;
+    font-family: 'Balsamiq Sans';
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+main{
+    background-color:whitesmoke;
+    width: 50%;
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    border: 2px solid lightslategray;
+    max-height: 95vh;
+}
+
+#alert-container{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width:100vw;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 4;
+}
+
+#alert-bar{
+    /* box-shadow: ; */
+    position: absolute;
+    padding: 10px;
+    background-color: rgb(255,255,255);
+    height: 200px;
+    width:300px;
+    z-index: 5;
+    text-align: center;
+}
+
+
+#alert-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+#alert-btn-container>button{
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+    color: white;
+    opacity: 0.7;
+}
+
+#alert-btn-container>button:hover{
+    opacity: 1;
+}
+
+.confirm{
+    background-color: green;
+}
+
+.cancel{
+    background-color: red;
+}
+
+#app-heading-div{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid lightslategray;
+    padding: 10px;
+    /* text-align:center; */
+}
+
+#app-heading{
+    margin: 0px;
+    color: rgb(4, 30, 55);
+}
+
+#task-input-div{
+    padding: 10px;
+    border-bottom:1px solid lightslategray;
+    background-color: transparent;
+}
+
+.sub-heading{
+    color: black;
+    margin: 10px 0px;
+}
+
+#task-desc{
+    font-size: 1em;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    border: 2px solid lightslategray;
+    border-radius: 5px;
+}
+
+#task-details{
+    border-bottom: 1px solid lightslategray;
+}
+
+#basic-details{
+    display: flex;
+}
+
+#category-div{
+    width: 50%;
+    border-right: 1px solid lightslategray;
+    padding: 10px;
+}
+
+select{
+    font-size: 0.8em;
+    margin-left: 10px;
+    outline: none;
+    /* border: 0px; */
+    border: 2px solid lightslategray;
+    width: 70%;
+    
+}
+
+#due-date-div{
+    margin-left: 20px;
+    width: 50%;
+    padding: 10px;
+}
+
+#due-date{
+    font-size: 0.8em;
+    outline: none;
+    border: 2px solid lightslategray;
+    border-radius: 5px;
+    width: 70%;
+    padding: 0px 8px;
+}
+
+#action-btn-div{
+    padding: 10px;
+    border-bottom: 1px solid lightslategray;
+    display: flex;
+    justify-content: center;
+}
+
+#action-btn-div>button{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 0.8em;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+    text-align: center;
+}
+
+#action-btn-div>button:hover{
+    transform: scale(1.1);
+}
+
+#add-task{
+    background-color: #13b01b;
+}
+
+#delete-all{
+    background-color: #D50000;
+}
+
+#delete-completed{
+    background-color: #C51162;
+}
+
+#task-container{
+    border-bottom: 1px solid lightslategrey;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+#task-container::-webkit-scrollbar{
+    display: none;
+}
+
+
+#empty-notify{
+    display: none;
+    text-align: center;
+}
+
+#item-list{
+    /* transition: all 0.5s ease-in-out;
+    perspective: 1000px; */
+    min-height: 20px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#extras{
+    display: flex;
+}
+
+#extras div{
+    padding: 3px 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+#sort-d{
+    margin-left: auto;
+    padding: 3px 10px;
+    box-sizing: border-box;
+}
+
+/* media quereis for screens below 1200px */
+
+@media screen and (max-width:1200px){
+    main{
+        width: 80%;
+    }
+}
+
+/* media quereis for screens below 786px */
+
+@media screen and (max-width:768px){
+    main{
+        width: 98%;
+    }
+
+    body{
+        font-size: 15px;
+    }
+}

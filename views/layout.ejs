@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST APP</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <!-- styles of rendering page  -->
+    <%- style %>
+</head>
+<body>
+
+    <div id="alert-container">
+        <div class="overlay"></div>
+        <div id="alert-bar">
+            <h2 class="center-align">Are you sure you want to delete all?</h2>
+            <div id="alert-btn-container">
+                <button id="confirm" class="center-align confirm" type="button">Confirm</button>
+                <button id="cancel" class="center-align cancel" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div id="app-heading-div">
+            <h1 id="app-heading"><i class="fas fa-clipboard-list"></i> TODO App</h1>
+        </div>
+
+        <form action="/add-task" method="POST">
+            <div id="task-input-div">
+                <h4 class="sub-heading">Task Description</h4>
+                <input type="text" name="task" id="task-desc" placeholder="Enter your Task" required>
+            </div>
+
+            <div id="task-details">
+                <div id="basic-details">
+                    <div id="category-div">
+                        <h4 class="sub-heading">Category</h4>
+                        <select name="category" id="task-category" required>
+                            <option value="">Choose Category:</option>
+                            <option value="work">Work</option>
+                            <option value="home">Home</option>
+                            <option value="college">College</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div id="due-date-div">
+                        <h4 class="sub-heading">Due Date</h4>
+                        <input type="date" name="date" id="due-date" required>
+                    </div>
+                </div>
+            </div>
+
+            <%# Action div which contains buttons for either adding or deleting %>
+            <div id="action-btn-div">
+                <button id="add-task" type="submit">
+                    <i class="fas fa-plus"></i> ADD TASK
+                </button>
+
+                <button id="delete-completed" type="button">
+                    <i class="fas fa-check"></i> DELETE COMPLETED
+                </button>
+
+                <button id="delete-all" type="button">
+                    <i class="far fa-trash-alt"></i> DELETE ALL
+                </button>
+            </div>
+        </form>
+
+        <!-- List container. And the List is rendered in home file  -->
+        <div id="task-container">
+            <div id="empty-notify">"Nothing to show here please add a task to continue!"</div>
+            <ul id="item-list">
+                <!--Body of rendering page -->
+                <%- body %>
+            </ul>
+        </div>
+
+         <!-- Div for showing completed pending items and also to sort by deadline or normally -->
+        <div id="extras">
+            <div>Completed :<span id="complete-count"></span></div>
+            <div>Pending :<span id="pending-count"></span></div>
+            <a id="sort-d" href="<%= link_to_page_filter %>"> <%= filter_page_name %> </a>
+        </div>
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/dda61a1448.js" crossorigin="anonymous"></script>
+    <script src="/js/layout.js"></script>
+    <!--Script of rendering page  -->
+    <%- script %>
+
+    </main>
+
+</body>
+</html>

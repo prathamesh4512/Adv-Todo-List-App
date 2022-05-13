@@ -1,0 +1,26 @@
+<%# Template file for showing list in normal order  %>
+<link rel="stylesheet" href="/css/task-list-style.css">
+
+<%# Rendring list by using task_list passed by task controller %>
+
+<% for (const task of task_list){ %>
+<li class="list-item">
+    <div class="id"><%=task._id%></div>
+    <div class="state"><%=task.state%></div>
+    <div class="completion-date-raw"><%=task.date%> </div>
+    <label for="check<%=task._id%>">
+        <div class="todo-div">
+            <div class="note"><input type="checkbox" id="check<%=task._id%>" class="input-check"><%=task.task%></div>
+            <div class="completion-date"><i class="far fa-calendar-alt"></i> &nbsp;<%=task.date.toDateString()%></div>
+            <div class="deadline-category-div">
+                <div class="category"><%=task.category%></div>
+                <div class="deadline"> Deadline Near </div>
+            </div>
+        </div>
+    </label>
+
+    <div class="delete"><a href="/delete-task/?id=<%=task._id%>"><i class="fas fa-trash"></i></a></div>
+</li>
+<% } %>
+
+<script src="/js/task-list-script.js"></script>

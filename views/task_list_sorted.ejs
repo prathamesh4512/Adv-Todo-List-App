@@ -1,0 +1,32 @@
+<!-- Template file for showing Sorted list -->
+
+<link rel="stylesheet" type="text/css" href="/css/task-list-style.css">
+
+<!-- Sorting list task_list passed by task controller -->
+<% const task_list_sorted = task_list.sort(function(a,b){ %>
+    <!-- ascending sorting -->
+<%  return a.date - b.date })%>  
+
+ <!-- Rendring Sorted list  -->
+<% for (const it of task_list_sorted){ %>
+
+<li class="list-item">
+    <div class="id"><%=it._id%></div>
+    <div class="state"><%=it.state%></div>
+    <div class="completion-date-raw"><%=it.date%> </div>
+    <label for="check<%=it._id%>">
+        <div class="todo-div">
+            <div class="note"><input type="checkbox" id="check<%=it._id%>" class="input-check"><%=it.task%></div>
+            <div class="completion-date"><i class="far fa-calendar-alt"></i> &nbsp;<%=it.date.toDateString()%></div>
+            <div class="deadline-category-div">
+                <div class="category"><%=it.category%></div>
+                <div class="deadline"> Deadline Near </div>
+            </div>
+        </div>
+    </label>
+
+    <div class="delete"><a href="/delete-task/?id=<%=it._id%>"><i class="fas fa-trash"></i></a></div>
+</li>
+<% } %>
+
+<script type="text/javascript" src="/js/task-list-script.js"></script>
