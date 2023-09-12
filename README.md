@@ -11,6 +11,11 @@ Tech Stack involved : HTML,CSS, JS, Node.js, Express.js, EJS templating engine, 
 6. "Delete all" will delete all the todo from the list.
 7. State of items (completed or not) is stored in db therefore they are persistant. On refreshing it will maintain that item was completed or not.
 
+## Demo Video
+
+
+https://user-images.githubusercontent.com/87566298/168344556-6e615fce-62b6-46d2-a00f-380dabab9cf2.mp4
+
 ## Run Locally
 
 Clone the project
@@ -36,9 +41,6 @@ Start the server
 ```bash
   npm start
 ```
-## Demo Video
 
-
-https://user-images.githubusercontent.com/87566298/168344556-6e615fce-62b6-46d2-a00f-380dabab9cf2.mp4
 
 
